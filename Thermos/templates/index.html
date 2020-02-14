@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+  <article>
+                    <header>
+                        <h1>Welcome</h1>
+                        <p>This is a social Bookmarking Site.</p>
+                        <p>Don't have an account? Create one by <a href="{{ url_for('signup') }}">Signing Up</a></p>
+
+                    </header>
+                    <section>
+                        <h2>Recently Added</h2>
+                        {% if new_bookmarks.count() >0  %}
+                           {%  with bookmarks=new_bookmarks %}
+                               {%  include "bookmark_list.html" %}
+                           {%  endwith %}
+
+                        {% else %}
+                           No Bookmarks have been added yet.
+                        {% endif %}
+                    </section>
+  </article>
+{% endblock %}
