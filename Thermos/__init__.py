@@ -13,7 +13,7 @@ app.config['SECRET_KEY']=b'\xb4\xc07\xd4n\xb0`-i \xc3\xb0 f\x16\xa4\x0f\xb0\xff\
 app.config['SQLALCHEMY_DATABASE_URI']="sqlite:///" + os.path.join(basedir,'Thermos.db')
 db=SQLAlchemy(app)
 
-# Configure authentication
+# configure authentication
 login_manager=LoginManager()
 login_manager.session_protection="strong"
 login_manager.login_view="login"
